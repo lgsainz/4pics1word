@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+/* general layout for page */
+html,body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('img/wood-bg.png');
+}
+
+#container {
+  width: 70%;
+  height: 80%;
+  /* background-color: #444; */
+}
+
+h1 {
+  font-family: 'Anton';
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* images container */
+#images {
+  width: 100%;
+  height: 400px;
+}
+
+/* images layout */
+table {
+  margin: 0 auto;
+  height: 100%;
+  text-align: center;
+  width: 400px;
+  border-spacing: 8px;
+}
+
+/* individual td squares for images */
+table td {
+  border: 4px solid #00a4e0;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* removes whitespace from beneath images in td */
+#images img {
+  display: block;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* container for current guess */
+#word-guess {
+  width: 100%;
+  height: 10%;
+  margin: 50px auto;
+}
+
+/* flex container for letters of current guess */
+#word-guess .flex-container {
+  height: 100%;
+  justify-content: center;
+  background-color: #00a4e0;
+  border-radius: 5px;
+}
+
+div.wrong-guess {
+  background-color: #b73131 !important;
+}
+
+td.wrong-guess {
+  border: 4px solid #b73131 !important;
+}
+
+div.right-guess {
+  background-color: #00bc1c !important;
+}
+
+td.right-guess {
+  border: 4px solid #00bc1c !important;
+}
+
+/* spacing for letter tiles of current guess */
+#word-guess .flex-container div {
+  margin: 0 2px;
+}
+
+/* container for letters and submit and backspace button */
+#letters {
+  width: 100%;
+  height: 16%;
+  margin: 50px 0;
+}
+
+/* all letter tiles */
+.letter-tile {
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Anton',Arial,sans-serif;
+  -webkit-box-shadow: inset 0 -4px 0px 0px #ccc;
+  -moz-box-shadow: inset 0 -4px 0px 0px #ccc;
+  -ms-box-shadow: inset 0 -4px 0px 0px #ccc;
+  -o-box-shadow: inset 0 -4px 0px 0px #ccc;
+  box-shadow: inset 0 -4px 0px 0px #ccc;
+}
+
+/* empty letter tiles indent effect */
+.empty-tile {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
+#submit {
+  background-color: #5fcc68;
+  -webkit-box-shadow: inset 0 -4px 0px 0px #00bc1c;
+  -moz-box-shadow: inset 0 -4px 0px 0px #00bc1c;
+  -ms-box-shadow: inset 0 -4px 0px 0px #00bc1c;
+  -o-box-shadow: inset 0 -4px 0px 0px #00bc1c;
+  box-shadow: inset 0 -4px 0px 0px #00bc1c;
+  color: #fff;
+}
+
+
+#backspace {
+  background-color: #ff5151;
+  -webkit-box-shadow: inset 0 -4px 0px 0px #b73131;
+  -moz-box-shadow: inset 0 -4px 0px 0px #b73131;
+  -ms-box-shadow: inset 0 -4px 0px 0px #b73131;
+  -o-box-shadow: inset 0 -4px 0px 0px #b73131;
+  box-shadow: inset 0 -4px 0px 0px #b73131;
+  color: #fff;
+}
+
+/* container for single row of letter tiles */
+.flex-container {
+  margin: 0 auto;
+  width: 400px;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* individual letter tiles within flex container */
+.flex-container div {
+  width: 50px;
+  min-height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  font-size: 24px;
+}
+
+/* makes text non highlightable */
+.flex-container span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+}
+
+/* shows inner span */
+.has-letter {
+  display: block;
+}
+
+/* hides inner span */
+.empty-tile span {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 640px) {
+  #container {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media screen and (max-width: 520px), (max-height: 900px) {
+  #container {
+    width: 100%;
+    height: 90%;
+  }
+
+  #images {
+    height: 340px;
+  }
+
+  table {
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+    width: 340px;
+    border-spacing: 8px;
+  }
+
+  img {
+    width: 170px;
+    height: 170px;
+  }
+
+  #word-guess {
+    width: 100%;
+    height: 10%;
+    margin: 50px auto;
+  }
+
+  .flex-container {
+    margin: 0 auto;
+    width: 340px;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .flex-container div {
+    width: 42px;
+    min-height: 42px;
+    line-height: 42px;
+    background-color: #fff;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-height: 900px) {
+  #container {
+    height: 100% !important;
+  }
+
+  div#letters {
+    margin-bottom: 0;
+  }
+}
